@@ -11,7 +11,7 @@ export function* signIn({ payload }) {
 
     const response = yield call(api.post, 'sessions', { email, password });
     const { token, user } = response.data;
-    console.tron.log(user);
+
     if (!user.provider) {
       toast.error('Usuário não é prestador');
       return;
